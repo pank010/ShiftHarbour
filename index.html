@@ -2,56 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Dashboard</title>
+    <title>Shift Harbour</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Employer and Worker Dashboard</h1>
-    <div class="dashboard">
-        <div class="candidate-actions">
-            <button class="accept">Accept</button>
-            <button class="reject">Reject</button>
-            <button class="interview">Schedule Interview</button>
-        </div>
-        <div class="interview-scheduling-modal">
-            <h2>Schedule Interview</h2>
-            <input type="datetime-local" class="datetime-picker">
-            <button class="confirm-schedule">Confirm</button>
-        </div>
-        <div class="rejection-reason-modal">
-            <h2>Rejection Reason</h2>
-            <textarea class="reason-input" placeholder="Enter reason"></textarea>
-            <button class="submit-reason">Submit</button>
-        </div>
-        <div class="worker-profile-views-tracking">
-            <h2>Profile Views Tracking</h2>
-            <table>
-                <tr><th>Worker</th><th>Views</th></tr>
-                <!-- Data will be populated dynamically -->
-            </table>
-        </div>
-        <div class="enhanced-resume-upload">
-            <h2>Upload Resume</h2>
-            <input type="file" class="resume-upload">
-            <div class="progress">
-                <div class="progress-bar" style="width: 0%;">0%</div>
-            </div>
-            <div class="file-preview">
-                <!-- Preview will show here -->
+    <header>
+        <h1>Welcome to Shift Harbour</h1>
+    </header>
+    <main>
+        <section id="applications">
+            <h2>Your Applications</h2>
+            <ul>
+                <!-- Application list generated dynamically -->
+                <li>
+                    <h3>Candidate Name</h3>
+                    <button class="accept-btn">Accept</button>
+                    <button class="reject-btn">Reject</button>
+                    <button class="interview-btn">Schedule Interview</button>
+                </li>
+                <!-- Repeat for more candidates -->
+            </ul>
+        </section>
+        <div id="interview-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Schedule Interview</h2>
+                <label for="interview-date">Date:</label>
+                <input type="date" id="interview-date">
+                <label for="interview-time">Time:</label>
+                <input type="time" id="interview-time">
+                <button id="confirm-interview">Confirm</button>
             </div>
         </div>
-        <div class="application-status-badges">
-            <h2>Application Status</h2>
-            <span class="badge applied">Applied</span>
-            <span class="badge interested">Interested</span>
-            <span class="badge under-review">Under Review</span>
-            <span class="badge rejected">Rejected</span>
-            <span class="badge interview-scheduled">Interview Scheduled</span>
-            <span class="badge hired">Hired</span>
+        <div id="rejection-reason-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Rejection Reason</h2>
+                <textarea id="rejection-reason" rows="4" placeholder="Enter reason..."></textarea>
+                <button id="submit-reason">Submit</button>
+            </div>
         </div>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Shift Harbour. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
