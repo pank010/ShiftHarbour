@@ -1,1 +1,56 @@
-[full original HTML content from the initial file, with the added features properly integrated]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShiftHarbour</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to ShiftHarbour</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Employer Dashboard</a></li>
+                <li><a href="#">Job Seeker</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="employer-dashboard">
+            <h2>Employer Dashboard</h2>
+            <div>
+                <h3>Job Applications</h3>
+                <div>
+                    <h4>Applicant: John Doe</h4>
+                    <button onclick="acceptApplication()">Accept</button>
+                    <button onclick="rejectApplication()">Reject</button>
+                    <button onclick="scheduleInterview()">Schedule Interview</button>
+                </div>
+            </div>
+        </section>
+        <section id="job-seeker">
+            <h2>Job Seeker</h2>
+            <div>
+                <h3>Upload Your Resume</h3>
+                <input type="file" id="resume" name="resume">
+                <button onclick="uploadResume()">Upload</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        function acceptApplication() {
+            alert('Application Accepted!');
+        }
+        function rejectApplication() {
+            alert('Application Rejected!');
+        }
+        function scheduleInterview() {
+            alert('Interview Scheduled!');
+        }
+        function uploadResume() {
+            alert('Resume Uploaded! AI Matching in Progress.');
+        }
+    </script>
+</body>
+</html>
