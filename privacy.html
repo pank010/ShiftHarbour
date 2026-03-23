@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Privacy Policy — ShiftHarbour</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F3A5F'/%3E%3Ccircle cx='16' cy='8.5' r='4' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='16' y1='12.5' x2='16' y2='24' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='9' y1='18' x2='23' y2='18' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M9 24 Q9 29 16 29 Q23 29 23 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='4' r='2.2' fill='%234FAAEE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+:root{
+  --navy:#1F3A5F;--navy-dark:#142847;
+  --blue:#0a66c2;--blue-l:#e8f0fb;
+  --accent:#4FAAEE;
+  --ink:#111827;--ink2:#374151;--ink3:#6b7280;--ink4:#9ca3af;
+  --line:#e5e7eb;--line2:#f3f4f6;--surf:#fafafa;--white:#fff;
+  --f:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --fs:'DM Serif Display',Georgia,serif;
+}
+body{font-family:var(--f);color:var(--ink);background:var(--white);line-height:1.7;}
+.container{width:100%;max-width:780px;margin:0 auto;padding:0 24px;}
+
+/* NAV */
+nav{background:var(--navy);padding:0 24px;}
+.nav-inner{height:60px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;text-decoration:none;}
+.back-link{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .15s;}
+.back-link:hover{color:var(--white);}
+
+/* HEADER */
+.page-header{background:var(--navy);padding:52px 24px 60px;text-align:center;}
+.page-header h1{font-family:var(--fs);font-size:clamp(2rem,4vw,2.8rem);font-weight:400;color:var(--white);margin-bottom:12px;}
+.page-header p{font-size:.95rem;color:rgba(255,255,255,.6);}
+.wave{background:var(--navy);line-height:0;}
+.wave svg{display:block;width:100%;}
+
+/* CONTENT */
+.content{padding:56px 0 80px;}
+.last-updated{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;color:var(--ink4);background:var(--line2);border-radius:100px;padding:5px 14px;margin-bottom:40px;}
+
+/* TOC */
+.toc{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-bottom:48px;}
+.toc h3{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-bottom:14px;}
+.toc ol{list-style:none;display:flex;flex-direction:column;gap:8px;counter-reset:toc;}
+.toc ol li{counter-increment:toc;}
+.toc ol li::before{content:counter(toc)". ";color:var(--blue);font-weight:600;font-size:.85rem;}
+.toc a{font-size:.88rem;color:var(--blue);text-decoration:none;font-weight:500;}
+.toc a:hover{text-decoration:underline;}
+
+/* SECTIONS */
+.policy-section{margin-bottom:48px;scroll-margin-top:80px;}
+.policy-section h2{font-family:var(--fs);font-size:1.5rem;font-weight:400;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--line);}
+.policy-section h3{font-size:1rem;font-weight:700;color:var(--ink);margin:24px 0 10px;}
+.policy-section p{font-size:.95rem;color:var(--ink2);line-height:1.8;margin-bottom:14px;}
+.policy-section p:last-child{margin-bottom:0;}
+.policy-section ul,.policy-section ol{margin:10px 0 14px 20px;display:flex;flex-direction:column;gap:8px;}
+.policy-section li{font-size:.95rem;color:var(--ink2);line-height:1.7;}
+.highlight-box{background:var(--blue-l);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:16px 18px;margin:18px 0;}
+.highlight-box p{color:var(--navy);font-size:.9rem;margin:0;}
+.info-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem;}
+.info-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:left;font-weight:600;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;}
+.info-table td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--ink2);line-height:1.6;vertical-align:top;}
+.info-table tr:last-child td{border-bottom:none;}
+.info-table tr:nth-child(even) td{background:var(--surf);}
+
+/* CONTACT BOX */
+.contact-box{background:var(--navy);border-radius:16px;padding:32px;text-align:center;margin-top:48px;}
+.contact-box h3{font-family:var(--fs);font-size:1.4rem;font-weight:400;color:var(--white);margin-bottom:10px;}
+.contact-box p{font-size:.9rem;color:rgba(255,255,255,.65);margin-bottom:20px;line-height:1.7;}
+.contact-box a{display:inline-block;padding:11px 24px;background:var(--white);color:var(--navy);font-size:.9rem;font-weight:700;border-radius:100px;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.contact-box a:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.15);}
+
+/* FOOTER */
+footer{background:var(--navy-dark);padding:24px;text-align:center;}
+footer p{font-size:.78rem;color:rgba(255,255,255,.3);}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;}
+footer a:hover{color:var(--white);}
+
+@media(max-width:600px){
+  .toc ol{gap:10px;}
+  .info-table{font-size:.82rem;}
+  .info-table th,.info-table td{padding:8px 10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner container" style="max-width:100%;">
+    <a href="index.html" class="logo">
+      <svg width="190" height="36" viewBox="0 0 190 36" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="36" height="36" rx="8" fill="#1F3A5F"/>
+        <circle cx="18" cy="10" r="5.5" fill="none" stroke="#fff" stroke-width="2.2"/>
+        <line x1="18" y1="15.5" x2="18" y2="28" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="11" y1="21" x2="25" y2="21" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M11 28 Q11 34 18 34 Q25 34 25 28" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="18" cy="4.5" r="2.5" fill="#4FAAEE"/>
+        <text x="44" y="25" style="font-size:18px;font-weight:700;fill:#1F3A5F;font-family:'DM Sans',sans-serif;">Shift</text>
+        <text x="86" y="25" style="font-size:18px;font-weight:300;fill:#1F3A5F;font-family:'DM Sans',sans-serif;">Harbour</text>
+      </svg>
+    </a>
+    <a href="index.html" class="back-link">← Back to ShiftHarbour</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>How ShiftHarbour collects, uses, and protects your information</p>
+  </div>
+</div>
+<div class="wave">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 40 L0 20 Q360 0 720 20 Q1080 40 1440 20 L1440 40 Z" fill="#fafafa"/>
+  </svg>
+</div>
+
+<!-- CONTENT -->
+<div class="content" style="background:var(--surf);">
+  <div class="container">
+
+    <div class="last-updated">📅 Last updated: March 17, 2026</div>
+
+    <div class="highlight-box">
+      <p><strong>Plain English summary:</strong> ShiftHarbour is a local staffing platform based in Fredericton, New Brunswick. We collect only the information we need to connect businesses with workers. We do not sell your data. Ever.</p>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#s1">Who We Are</a></li>
+        <li><a href="#s2">Information We Collect</a></li>
+        <li><a href="#s3">How We Use Your Information</a></li>
+        <li><a href="#s4">How We Share Your Information</a></li>
+        <li><a href="#s5">Data Storage &amp; Security</a></li>
+        <li><a href="#s6">Cookies &amp; Tracking</a></li>
+        <li><a href="#s7">Your Rights</a></li>
+        <li><a href="#s8">Children's Privacy</a></li>
+        <li><a href="#s9">Third-Party Services</a></li>
+        <li><a href="#s10">Changes to This Policy</a></li>
+        <li><a href="#s11">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- SECTIONS -->
+    <div class="policy-section" id="s1">
+      <h2>1. Who We Are</h2>
+      <p>ShiftHarbour is a local staffing platform that connects businesses in New Brunswick, Canada with reliable local workers for short-term and event-based employment opportunities.</p>
+      <p><strong>Company:</strong> ShiftHarbour<br>
+      <strong>Location:</strong> Fredericton, New Brunswick, Canada<br>
+      <strong>Website:</strong> https://shiftharbour.com<br>
+      <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1d1d3c8d7c0c2d8e1d2c9c8c7d5c9c0d3c3ced4d38fc2cecc">[email&#160;protected]</a></p>
+      <p>By using our platform, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+    </div>
+
+    <div class="policy-section" id="s2">
+      <h2>2. Information We Collect</h2>
+      <p>We collect information in two ways: information you provide directly, and information collected automatically when you use our platform.</p>
+
+      <h3>Information You Provide</h3>
+      <table class="info-table">
+        <thead><tr><th>Type</th><th>What We Collect</th><th>Who Provides It</th></tr></thead>
+        <tbody>
+          <tr><td>Account Registration</td><td>First name, last name, email address, password, role (employer or worker), business name (employers only)</td><td>All users</td></tr>
+          <tr><td>Job Postings</td><td>Job title, business name, industry, pay rate, number of workers, date, location, job description, contact email, contact phone</td><td>Employers</td></tr>
+          <tr><td>Job Applications</td><td>Full name, phone number, email address, work experience, availability</td><td>Workers</td></tr>
+          <tr><td>Survey Responses</td><td>Responses to our pilot survey including industry, work preferences, location, demographics</td><td>All users</td></tr>
+          <tr><td>Google Sign-In</td><td>Name, email address, and profile picture provided by Google when you choose to sign in with Google</td><td>All users</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Information Collected Automatically</h3>
+      <ul>
+        <li>Browser type and version</li>
+        <li>Pages visited on our platform and time spent</li>
+        <li>Device type (desktop, mobile, tablet)</li>
+        <li>General location (city/province level based on IP address)</li>
+        <li>Referring website (how you found us)</li>
+      </ul>
+
+      <p>We do not collect precise GPS location, payment card numbers, or government identification numbers.</p>
+    </div>
+
+    <div class="policy-section" id="s3">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul>
+        <li><strong>To provide the platform:</strong> Matching employers with suitable workers, displaying job listings, and processing applications</li>
+        <li><strong>Account management:</strong> Creating and managing your ShiftHarbour account, authenticating your identity</li>
+        <li><strong>Communications:</strong> Notifying employers when workers apply to their jobs, sending confirmation emails, and responding to your inquiries</li>
+        <li><strong>Platform improvement:</strong> Understanding how the platform is used so we can improve it during our pilot phase</li>
+        <li><strong>Research:</strong> Analysing aggregated, anonymised data to understand the New Brunswick staffing market</li>
+        <li><strong>Legal compliance:</strong> Complying with applicable Canadian laws and regulations</li>
+      </ul>
+      <div class="highlight-box">
+        <p>We will never use your information for targeted advertising, sell it to data brokers, or use it for any purpose unrelated to operating ShiftHarbour.</p>
+      </div>
+    </div>
+
+    <div class="policy-section" id="s4">
+      <h2>4. How We Share Your Information</h2>
+      <p>ShiftHarbour does not sell, rent, or trade your personal information to third parties. We share your information only in the following limited circumstances:</p>
+
+      <h3>Between Employers and Workers</h3>
+      <p>When a worker applies for a job, their application details (name, phone, email, experience, and availability) are shared with the employer who posted that job. This is the core function of our platform. By submitting an application, you consent to this sharing.</p>
+      <p>Job posting details (including the employer's contact email) are visible to registered workers on the platform.</p>
+
+      <h3>Service Providers</h3>
+      <table class="info-table">
+        <thead><tr><th>Provider</th><th>Purpose</th><th>Data Shared</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Database hosting and authentication</td><td>All account and platform data (stored securely in their cloud)</td></tr>
+          <tr><td>Google</td><td>OAuth sign-in (optional)</td><td>Email and name if you choose Google sign-in</td></tr>
+          <tr><td>GitHub Pages</td><td>Website hosting</td><td>No personal data shared — static file hosting only</td></tr>
+          <tr><td>SurveyMonkey</td><td>Pilot surveys</td><td>Survey responses submitted via our survey links</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Legal Requirements</h3>
+      <p>We may disclose your information if required to do so by law, court order, or governmental authority in Canada, or if we believe in good faith that such disclosure is necessary to protect the safety of any person or to prevent illegal activity.</p>
+    </div>
+
+    <div class="policy-section" id="s5">
+      <h2>5. Data Storage &amp; Security</h2>
+      <p>Your data is stored securely using Supabase, a cloud database provider. Supabase stores data in data centres located in the United States. By using ShiftHarbour, you consent to your data being transferred to and stored in the United States.</p>
+      <p>We implement the following security measures:</p>
+      <ul>
+        <li>All data is transmitted over HTTPS (encrypted in transit)</li>
+        <li>Passwords are hashed and never stored in plain text</li>
+        <li>Database access is restricted using Row Level Security policies</li>
+        <li>API keys are restricted to minimum necessary permissions</li>
+        <li>Regular security reviews during our pilot phase</li>
+      </ul>
+      <p>While we take reasonable steps to protect your information, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security of your data.</p>
+
+      <h3>Data Retention</h3>
+      <p>We retain your account data for as long as your account is active. Job postings are retained until deleted by the employer or removed by ShiftHarbour. Applications are retained for 12 months after submission. You may request deletion of your data at any time by contacting us.</p>
+    </div>
+
+    <div class="policy-section" id="s6">
+      <h2>6. Cookies &amp; Tracking</h2>
+      <p>ShiftHarbour uses minimal cookies and tracking technologies:</p>
+      <ul>
+        <li><strong>Authentication cookies:</strong> Used to keep you signed in to your account. These are essential for the platform to function.</li>
+        <li><strong>Session storage:</strong> Used temporarily to remember your role selection and pending actions during a browsing session. This data is cleared when you close your browser.</li>
+      </ul>
+      <p>We do not use advertising cookies, cross-site tracking pixels, or third-party analytics tools that track you across websites. We do not participate in any ad networks.</p>
+      <p>You can disable cookies in your browser settings, but this may prevent you from signing in to your account.</p>
+    </div>
+
+    <div class="policy-section" id="s7">
+      <h2>7. Your Rights</h2>
+      <p>As a resident of New Brunswick (and Canada), you have rights under Canadian privacy law, including the <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA):</p>
+      <ul>
+        <li><strong>Right to access:</strong> You can request a copy of the personal information we hold about you</li>
+        <li><strong>Right to correction:</strong> You can request that we correct inaccurate information about you</li>
+        <li><strong>Right to deletion:</strong> You can request that we delete your personal information, subject to legal retention requirements</li>
+        <li><strong>Right to withdraw consent:</strong> You can withdraw your consent to our processing of your information at any time by deleting your account</li>
+        <li><strong>Right to complain:</strong> You have the right to file a complaint with the Office of the Privacy Commissioner of Canada if you believe your privacy rights have been violated</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="68181a011e090b11281b00010e1c00091a0a071d1a460b0705">[email&#160;protected]</a></strong>. We will respond to all requests within 30 days.</p>
+
+      <h3>Deleting Your Account</h3>
+      <p>You can request deletion of your account and all associated data by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4a3a38233c2b29330a3922232c3e222b3828253f3864292527">[email&#160;protected]</a> with the subject line "Account Deletion Request." We will process your request within 7 business days.</p>
+    </div>
+
+    <div class="policy-section" id="s8">
+      <h2>8. Children's Privacy</h2>
+      <p>ShiftHarbour is intended for users who are 16 years of age or older. We do not knowingly collect personal information from anyone under the age of 16. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0c0c2d9c6d1d3c9f0c3d8d9d6c4d8d1c2d2dfc5c29ed3dfdd">[email&#160;protected]</a> and we will delete that information.</p>
+      <p>Workers must be of legal working age in New Brunswick (minimum 14 years with parental consent for certain jobs, 16 years for most employment) to use the platform. By creating a worker account, you confirm you meet the minimum age requirement for the type of work you are seeking.</p>
+    </div>
+
+    <div class="policy-section" id="s9">
+      <h2>9. Third-Party Services</h2>
+      <p>Our platform integrates with the following third-party services. Their use of your information is governed by their own privacy policies:</p>
+      <ul>
+        <li><strong>Google OAuth</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--blue);">Google Privacy Policy</a></li>
+        <li><strong>Supabase</strong> — <a href="https://supabase.com/privacy" target="_blank" rel="noopener" style="color:var(--blue);">Supabase Privacy Policy</a></li>
+        <li><strong>SurveyMonkey</strong> — <a href="https://www.surveymonkey.com/mp/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--blue);">SurveyMonkey Privacy Policy</a></li>
+      </ul>
+      <p>ShiftHarbour is not responsible for the privacy practices of these third-party services. We encourage you to review their policies before using those features.</p>
+      <p>Our website does not contain links to third-party advertising networks and we do not allow third parties to collect information about our users for advertising purposes.</p>
+    </div>
+
+    <div class="policy-section" id="s10">
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time as our platform evolves. When we make significant changes, we will:</p>
+      <ul>
+        <li>Update the "Last updated" date at the top of this page</li>
+        <li>Notify registered users by email if the changes materially affect how we handle their data</li>
+        <li>Post a notice on the ShiftHarbour homepage for at least 30 days</li>
+      </ul>
+      <p>Your continued use of ShiftHarbour after any changes to this policy constitutes your acceptance of the updated terms. If you disagree with the changes, you may delete your account at any time.</p>
+    </div>
+
+    <div class="policy-section" id="s11">
+      <h2>11. Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us:</p>
+      <p>
+        <strong>ShiftHarbour Privacy</strong><br>
+        📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8bfbf9e2fdeae8f2cbf8e3e2edffe3eaf9e9e4fef9a5e8e4e6">[email&#160;protected]</a><br>
+        📍 Fredericton, New Brunswick, Canada<br>
+        🌐 https://shiftharbour.com
+      </p>
+      <p>For complaints about how we handle your personal information, you may also contact the <strong>Office of the Privacy Commissioner of Canada</strong> at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener" st

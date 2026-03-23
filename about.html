@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us — ShiftHarbour</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F3A5F'/%3E%3Ccircle cx='16' cy='8.5' r='4' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cline x1='16' y1='12.5' x2='16' y2='24' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='9' y1='18' x2='23' y2='18' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M9 24 Q9 29 16 29 Q23 29 23 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='4' r='2.2' fill='%234FAAEE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+:root{
+  --navy:#1F3A5F;--navy-dark:#142847;--navy-light:#2a4d7a;
+  --blue:#0a66c2;--blue-l:#e8f0fb;--accent:#4FAAEE;
+  --green:#16a34a;--green-l:#dcfce7;--orange:#f97316;
+  --ink:#111827;--ink2:#374151;--ink3:#6b7280;--ink4:#9ca3af;
+  --line:#e5e7eb;--line2:#f3f4f6;--surf:#fafafa;--white:#fff;
+  --f:'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --fs:'DM Serif Display',Georgia,serif;
+}
+body{font-family:var(--f);color:var(--ink);background:var(--white);line-height:1.7;}
+.container{width:100%;max-width:1100px;margin:0 auto;padding:0 24px;}
+.container-narrow{width:100%;max-width:760px;margin:0 auto;padding:0 24px;}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;}
+.nav-inner{height:60px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 24px;}
+.logo{display:flex;align-items:center;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-link{font-size:.875rem;font-weight:500;color:var(--ink2);padding:8px 14px;border-radius:100px;background:none;border:none;cursor:pointer;font-family:var(--f);text-decoration:none;transition:background .15s;}
+.nav-link:hover{background:var(--line2);}
+.nav-link.active{color:var(--blue);font-weight:700;}
+.btn-nav{font-size:.85rem;font-weight:600;color:var(--white);background:var(--blue);padding:8px 18px;border-radius:100px;border:none;text-decoration:none;transition:background .15s;}
+.btn-nav:hover{background:#0952a0;}
+
+/* HERO */
+.hero{background:var(--navy);padding:80px 24px 100px;position:relative;overflow:hidden;text-align:center;}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.5px);background-size:32px 32px;}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:60px;background:var(--white);clip-path:ellipse(60% 100% at 50% 100%);}
+.hero-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(79,170,238,.12);border:1px solid rgba(79,170,238,.25);border-radius:100px;padding:5px 14px;margin-bottom:22px;}
+.hero h1{font-family:var(--fs);font-size:clamp(2rem,4vw,3rem);color:var(--white);font-weight:400;line-height:1.15;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.65);line-height:1.75;max-width:540px;margin:0 auto;}
+
+/* SECTIONS */
+.section{padding:80px 0;}
+.section-alt{background:var(--surf);}
+.s-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:8px;}
+.s-title{font-family:var(--fs);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:14px;}
+.s-sub{font-size:.97rem;color:var(--ink3);line-height:1.75;max-width:540px;}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.story-text p{font-size:.97rem;color:var(--ink2);line-height:1.8;margin-bottom:16px;}
+.story-text p:last-child{margin-bottom:0;}
+.story-visual{background:var(--navy);border-radius:24px;padding:40px;display:flex;flex-direction:column;gap:20px;}
+.story-stat{display:flex;flex-direction:column;}
+.story-stat-num{font-family:var(--fs);font-size:2.4rem;color:var(--white);line-height:1;}
+.story-stat-num span{font-size:1.2rem;color:var(--accent);}
+.story-stat-label{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;}
+.story-divider{height:1px;background:rgba(255,255,255,.12);}
+
+/* VALUES */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+.value-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px 24px;transition:border-color .15s,box-shadow .15s,transform .15s;}
+.value-card:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-3px);}
+.value-icon{font-size:2rem;margin-bottom:14px;display:block;}
+.value-title{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.value-desc{font-size:.88rem;color:var(--ink3);line-height:1.65;}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.team-card{text-align:center;}
+.team-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:var(--white);}
+.team-name{font-size:.97rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.team-role{font-size:.8rem;color:var(--blue);font-weight:600;margin-bottom:8px;}
+.team-bio{font-size:.82rem;color:var(--ink3);line-height:1.6;}
+
+/* WHY NB */
+.nb-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px;}
+.nb-stat-list{display:flex;flex-direction:column;gap:16px;}
+.nb-stat{display:flex;align-items:center;gap:16px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+.nb-stat-num{font-family:var(--fs);font-size:1.6rem;color:var(--navy);min-width:70px;flex-shrink:0;}
+.nb-stat-text{font-size:.88rem;color:var(--ink2);line-height:1.5;}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--navy-dark),var(--navy),var(--navy-light));padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(79,170,238,.08) 1.5px,transparent 1.5px);background-size:32px 32px;}
+.cta-inner{position:relative;z-index:1;max-width:580px;margin:0 auto;}
+.cta h2{font-family:var(--fs);font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--white);font-weight:400;margin-bottom:14px;}
+.cta p{font-size:.97rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:32px;}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.btn-cw{padding:13px 26px;background:var(--white);color:var(--navy);font-size:.92rem;font-weight:700;border-radius:100px;border:none;text-decoration:none;display:inline-block;transition:transform .15s,box-shadow .15s;}
+.btn-cw:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2);}
+.btn-cg{padding:13px 26px;background:transparent;color:rgba(255,255,255,.8);font-size:.92rem;font-weight:600;border:1.5px solid rgba(255,255,255,.25);border-radius:100px;text-decoration:none;display:inline-block;transition:all .15s;}
+.btn-cg:hover{border-color:rgba(255,255,255,.7);color:var(--white);}
+
+/* FOOTER */
+footer{background:var(--navy-dark);padding:28px 24px;text-align:center;}
+footer p{font-size:.78rem;color:rgba(255,255,255,.3);}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;}
+footer a:hover{color:var(--white);}
+
+@media(max-width:900px){.story-grid,.nb-grid{grid-template-columns:1fr;}.values-grid{grid-template-columns:1fr 1fr;}.team-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.values-grid,.team-grid{grid-template-columns:1fr;}.nav-links{display:none;}.cta-btns{flex-direction:column;align-items:center;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="190" height="36" viewBox="0 0 190 36" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="36" height="36" rx="8" fill="#1F3A5F"/>
+        <circle cx="18" cy="10" r="5.5" fill="none" stroke="#fff" stroke-width="2.2"/>
+        <line x1="18" y1="15.5" x2="18" y2="28" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="11" y1="21" x2="25" y2="21" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M11 28 Q11 34 18 34 Q25 34 25 28" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="18" cy="4.5" r="2.5" fill="#4FAAEE"/>
+        <text x="44" y="25" style="font-size:18px;font-weight:700;fill:#1F3A5F;font-family:'DM Sans',sans-serif;">Shift</text>
+        <text x="86" y="25" style="font-size:18px;font-weight:300;fill:#1F3A5F;font-family:'DM Sans',sans-serif;">Harbour</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="vision.html" class="nav-link">Vision</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="index.html" class="btn-nav">Browse Jobs →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">⚓ Fredericton, New Brunswick</div>
+    <h1>Building a better way to<br><em>hire local talent</em> in NB</h1>
+    <p>ShiftHarbour was born in Fredericton with one idea: make short-term hiring as simple as a text message — for businesses and workers alike.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <p class="s-eyebrow">Our story</p>
+        <h2 class="s-title">Built for the gaps that other platforms ignore</h2>
+        <p>Every weekend in Fredericton, hotels scramble for banquet servers, restaurants need last-minute kitchen help, and event venues can't fill their floor staff fast enough. Meanwhile, hundreds of locals want flexible work — but have no easy way to find it.</p>
+        <p>ShiftHarbour started as a simple question: <strong>why does it take days to fill a 6-hour shift?</strong> The answer was that no platform was built specifically for Atlantic Canada's short-term, event-driven economy.</p>
+        <p>We're changing that — starting right here in Fredericton.</p>
+      </div>
+      <div class="story-visual">
+        <div class="story-stat">
+          <div class="story-stat-num">2026<span> ←</span></div>
+          <div class="story-stat-label">Founded in Fredericton</div>
+        </div>
+        <div class="story-divider"></div>
+        <div class="story-stat">
+          <div class="story-stat-num">1 <span style="font-size:1rem;color:rgba(255,255,255,.5)">city</span></div>
+          <div class="story-stat-label">Phase 1 — Fredericton, NB</div>
+        </div>
+        <div class="story-divider"></div>
+        <div class="story-stat">
+          <div class="story-stat-num">4 <span style="font-size:1rem;color:rgba(255,255,255,.5)">provinces</span></div>
+          <div class="story-stat-label">Target by end of 2026</div>
+        </div>
+        <div class="story-divider"></div>
+        <div class="story-stat">
+          <div class="story-stat-num">$0 <span style="font-size:1rem;color:var(--accent)">free</span></div>
+          <div class="story-stat-label">Free during pilot phase</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="s-eyebrow">What we stand for</p>
+    <h2 class="s-title">Our values</h2>
+    <p class="s-sub">Every feature we build is guided by these three principles.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <span class="value-icon">🤝</span>
+        <div class="value-title">Direct connections only</div>
+        <div class="value-desc">No middlemen, no recruiters, no agency fees. Employers and workers connect directly — keeping more money in everyone's pocket.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">⚡</span>
+        <div class="value-title">Speed matters</div>
+        <div class="value-desc">A shift that starts tomorrow can't wait three days for a response. We built ShiftHarbour so you can post a job in 2 minutes and get applicants within hours.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🌊</span>
+        <div class="value-title">Built for Atlantic Canada</div>
+        <div class="value-desc">We're not a Toronto startup trying to expand east. We're from New Brunswick. We understand the local economy, the seasonality, and the community.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🔍</span>
+        <div class="value-title">Transparency first</div>
+        <div class="value-desc">Every job shows the real pay rate. Every employer gets real applicant contact info. No hidden fees, no bait-and-switch.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🏘️</span>
+        <div class="value-title">Community-driven</div>
+        <div class="value-desc">ShiftHarbour's growth is shaped by the NB businesses and workers who use it. We survey our users, listen to feedback, and build what actually helps.</div>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🤖</span>
+        <div class="value-title">AI that actually helps</div>
+        <div class="value-desc">Our AI matching extracts worker skills from resumes and ranks them against job requirements — so the right people find the right jobs faster.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NB -->
+<section class="section">
+  <div class="container">
+    <div class="nb-grid">
+      <div>
+        <p class="s-eyebrow">Why New Brunswick</p>
+        <h2 class="s-title">NB's gig economy is underserved</h2>
+        <p class="s-sub" style="margin-bottom:24px;">The numbers tell the story. New Brunswick has a large and growing pool of flexible workers — and businesses that can't find them fast enough.</p>
+        <a href="vision.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--navy);color:#fff;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;">See Our Expansion Plan →</a>
+      </div>
+      <div class="nb-stat-list">
+        <div class="nb-stat">
+          <div class="nb-stat-num">780K+</div>
+          <div class="nb-stat-text">Population in New Brunswick with a growing service and hospitality sector</div>
+        </div>
+        <div class="nb-stat">
+          <div class="nb-stat-num">63K+</div>
+          <div class="nb-stat-text">Small businesses in NB that regularly need short-term staffing support</div>
+        </div>
+        <div class="nb-stat">
+          <div class="nb-stat-num">40%</div>
+          <div class="nb-stat-text">Of NB workers have done or want to do some form of gig or flexible work</div>
+        </div>
+        <div class="nb-stat">
+          <div class="nb-stat-num">58K</div>
+          <div class="nb-stat-text">People in the Fredericton area — our starting market for Phase 1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="cta-inner">
+    <p style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px;">Join the pilot</p>
+    <h2>Be part of something<br>being built for NB.</h2>
+    <p>Whether you're a Fredericton business or a local looking for flexible work — join ShiftHarbour during our free pilot and help shape the platform.</p>
+    <div class="cta-btns">
+      <a href="index.html" class="btn-cw">🏢 Post a Job — Free</a>
+      <a href="contact.html" class="btn-cg">📧 Get in Touch</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 ShiftHarbour · Fredericton, NB · <a href="index.html">Home</a> · <a href="vision.html">Vision</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a></p>
+</footer>
+
+</body>
+</html>
