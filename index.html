@@ -613,23 +613,29 @@ footer{background:var(--navy-dark);padding:40px 24px 28px;}
 .rating-stars{color:#f59e0b;letter-spacing:1px;font-size:.75rem;}
 .rating-count{font-size:.72rem;color:var(--ink4);font-weight:400;}
 
-/* ── MESSAGING ── */
-.msg-panel{position:fixed;bottom:0;right:24px;width:320px;height:420px;background:var(--white);border:1px solid var(--line);border-bottom:none;border-radius:16px 16px 0 0;box-shadow:0 -4px 24px rgba(0,0,0,.12);z-index:500;display:none;flex-direction:column;overflow:hidden;}
+/* ── MESSAGING — WhatsApp Style ── */
+.msg-panel{position:fixed;bottom:0;right:24px;width:360px;height:520px;background:var(--white);border:none;border-radius:16px 16px 0 0;box-shadow:0 -4px 32px rgba(0,0,0,.18);z-index:500;display:none;flex-direction:column;overflow:hidden;}
 .msg-panel.open{display:flex;}
-.msg-header{background:var(--navy);color:var(--white);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.msg-header-name{font-size:.9rem;font-weight:700;}
-.msg-header-sub{font-size:.72rem;opacity:.6;margin-top:1px;}
-.msg-close{background:none;border:none;color:var(--white);font-size:1.1rem;cursor:pointer;opacity:.7;padding:4px;}
-.msg-close:hover{opacity:1;}
-.msg-body{flex:1;overflow-y:auto;padding:14px 12px;display:flex;flex-direction:column;gap:8px;background:var(--surf);}
-.msg-bubble{max-width:78%;padding:9px 13px;border-radius:14px;font-size:.85rem;line-height:1.5;word-break:break-word;}
-.msg-out{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
-.msg-in{background:var(--white);color:var(--ink);align-self:flex-start;border:1px solid var(--line);border-bottom-left-radius:4px;}
-.msg-time{font-size:.62rem;opacity:.6;margin-top:3px;text-align:right;}
-.msg-footer{padding:10px 12px;border-top:1px solid var(--line);display:flex;gap:8px;flex-shrink:0;background:var(--white);}
-.msg-input{flex:1;padding:9px 12px;border:1.5px solid var(--line);border-radius:100px;font-size:.87rem;font-family:var(--f);outline:none;transition:border-color .15s;}
-.msg-input:focus{border-color:var(--blue);}
-.msg-send{padding:9px 16px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+.msg-header{background:#075e54;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.msg-header-avatar{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;flex-shrink:0;}
+.msg-header-info{flex:1;min-width:0;}
+.msg-header-name{font-size:.9rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.msg-header-status{font-size:.7rem;opacity:.75;margin-top:1px;}
+.msg-close{background:none;border:none;color:rgba(255,255,255,.8);font-size:1.1rem;cursor:pointer;padding:4px;display:flex;align-items:center;transition:color .15s;}
+.msg-close:hover{color:#fff;}
+.msg-body{flex:1;overflow-y:auto;padding:10px 10px;display:flex;flex-direction:column;gap:3px;background:#efeae2;}
+.msg-row{display:flex;flex-direction:column;margin-bottom:1px;}
+.msg-row.out{align-items:flex-end;}
+.msg-row.in{align-items:flex-start;}
+.msg-bubble{max-width:75%;padding:7px 12px 20px;border-radius:8px;font-size:.87rem;line-height:1.5;word-break:break-word;position:relative;box-shadow:0 1px 2px rgba(0,0,0,.12);}
+.msg-out{background:#d9fdd3;color:#111;border-radius:8px 0 8px 8px;}
+.msg-in{background:#fff;color:#111;border-radius:0 8px 8px 8px;}
+.msg-ts{position:absolute;bottom:4px;right:10px;font-size:.6rem;color:rgba(0,0,0,.4);white-space:nowrap;}
+.msg-out .msg-ts{color:#0a7340;}
+.msg-footer{padding:8px 10px;background:#f0f2f5;display:flex;gap:8px;align-items:center;flex-shrink:0;border-top:1px solid rgba(0,0,0,.06);}
+.msg-input{flex:1;padding:9px 14px;border:none;border-radius:22px;font-size:.9rem;font-family:var(--f);outline:none;background:#fff;color:var(--ink);}
+.msg-send{width:40px;height:40px;min-width:40px;background:#075e54;color:#fff;border:none;border-radius:50%;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s;}
+.msg-send:hover{background:#128c7e;}
 .msg-badge{position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:var(--red);color:#fff;border-radius:50%;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
 
 /* ── NOTIFICATION TOAST SYSTEM ── */
@@ -1385,18 +1391,23 @@ footer{background:var(--navy-dark);padding:40px 24px 28px;}
 <!-- ══ MESSAGING PANEL ══ -->
 <div class="msg-panel" id="msgPanel">
   <div class="msg-header">
-    <div>
+    <div class="msg-header-avatar" id="msgPanelAvatar">?</div>
+    <div class="msg-header-info">
       <div class="msg-header-name" id="msgPanelName">Messages</div>
-      <div class="msg-header-sub" id="msgPanelSub">ShiftHarbour</div>
+      <div class="msg-header-status" id="msgPanelSub">ShiftHarbour</div>
     </div>
-    <button class="msg-close" onclick="closeMessaging()">✕</button>
+    <button class="msg-close" onclick="closeMessaging()" title="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </div>
   <div class="msg-body" id="msgBody">
-    <div style="text-align:center;color:var(--ink4);font-size:.82rem;padding:24px;">No messages yet</div>
+    <div style="text-align:center;color:rgba(0,0,0,.5);font-size:.78rem;padding:12px 16px;background:rgba(255,255,255,.75);border-radius:8px;margin:20px auto;max-width:220px;">🔒 Messages via ShiftHarbour</div>
   </div>
   <div class="msg-footer">
-    <input class="msg-input" id="msgInput" placeholder="Type a message…" onkeydown="if(event.key==='Enter')sendMessage()">
-    <button class="msg-send" onclick="sendMessage()">Send</button>
+    <input class="msg-input" id="msgInput" placeholder="Type a message" onkeydown="if(event.key==='Enter')sendMessage()">
+    <button class="msg-send" onclick="sendMessage()" title="Send">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
   </div>
 </div>
 
@@ -1573,7 +1584,7 @@ footer{background:var(--navy-dark);padding:40px 24px 28px;}
               <div style="display:flex;align-items:center;gap:6px;font-size:.76rem;color:var(--ink3);"><span>⚡</span> Results in minutes</div>
               <div style="display:flex;align-items:center;gap:6px;font-size:.76rem;color:var(--ink3);"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Secure & encrypted</div>
             </div>
-            <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+            <div id="id-form-container" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
               <button onclick="startIDVerification()" id="startIDBtn" style="padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:100px;font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Start ID Verification</button>
               <div style="display:flex;align-items:center;gap:6px;">
                 <img src="https://certn.co/wp-content/uploads/2022/01/certn-logo.svg" onerror="this.style.display='none'" style="height:20px;opacity:.6;" alt="Certn">
@@ -4327,6 +4338,12 @@ window.openVerification = function(){
     }
   });
 
+  // Restore ID form container to the button (if the form was left open from a previous session)
+  if(!verifyState.id){
+    const idArea = ge('id-form-container');
+    if(idArea && !ge('startIDBtn')) idArea.innerHTML = _idVerifyBtnHTML();
+  }
+
   // Restore saved verification state from user metadata
   const meta = currentUser?.user_metadata || {};
   if(meta.phone_verified){
@@ -4501,8 +4518,10 @@ window.openMessaging = function(name, appId, otherUserId){
   _msgContext = {name, appId, otherUserId};
   _msgThread = [];
   ge('msgPanelName').textContent = name;
-  ge('msgPanelSub').textContent = 'ShiftHarbour message';
-  ge('msgBody').innerHTML = `<div style="text-align:center;color:var(--ink4);font-size:.82rem;padding:20px;">Start a conversation with ${esc(name)}</div>`;
+  ge('msgPanelSub').textContent = 'online';
+  const av = ge('msgPanelAvatar');
+  if(av) av.textContent = name.charAt(0).toUpperCase();
+  ge('msgBody').innerHTML = `<div style="text-align:center;color:rgba(0,0,0,.5);font-size:.78rem;padding:12px 16px;background:rgba(255,255,255,.75);border-radius:8px;margin:20px auto;max-width:220px;">🔒 Messages via ShiftHarbour</div>`;
   ge('msgInput').value = '';
   ge('msgPanel').classList.add('open');
   // Load existing messages
@@ -4531,14 +4550,14 @@ async function loadMessages(appId){
 function renderMessages(){
   const body = ge('msgBody');
   if(!_msgThread.length){
-    body.innerHTML = `<div style="text-align:center;color:var(--ink4);font-size:.82rem;padding:20px;">No messages yet — say hello!</div>`;
+    body.innerHTML = `<div style="text-align:center;color:rgba(0,0,0,.5);font-size:.78rem;padding:12px 16px;background:rgba(255,255,255,.75);border-radius:8px;margin:20px auto;max-width:220px;">No messages yet — say hello! 👋</div>`;
     return;
   }
   body.innerHTML = _msgThread.map(m=>{
     const isMe = m.sender_id === currentUser?.id;
-    return`<div style="display:flex;flex-direction:column;align-items:${isMe?'flex-end':'flex-start'};">
-      <div class="msg-bubble ${isMe?'msg-out':'msg-in'}">${esc(m.text)}</div>
-      <div class="msg-time">${timeAgo(m.created_at)}</div>
+    const time = m.created_at ? new Date(m.created_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}) : '';
+    return`<div class="msg-row ${isMe?'out':'in'}">
+      <div class="msg-bubble ${isMe?'msg-out':'msg-in'}">${esc(m.text)}<span class="msg-ts">${time}</span></div>
     </div>`;
   }).join('');
   body.scrollTop = body.scrollHeight;
@@ -4586,7 +4605,7 @@ window.showNotif = function(title, body='', type='', duration=5000){
   el.innerHTML = `
     <div class="notif-icon">${icons[type]||icons['']}</div>
     <div class="notif-text">
-      <div class="notif-title">${esc(title)}</div>
+      <div class="notif-title">${title}</div>
       ${body?`<div>${esc(body)}</div>`:''}
     </div>
     <button class="notif-dismiss" onclick="document.getElementById('${id}')?.remove()">✕</button>`;
@@ -4680,15 +4699,23 @@ window.verifyPhoneCode = async function(){
   btn.disabled=false; btn.textContent='Verify';
 };
 
+// ── Helper: original ID verification button HTML ──
+function _idVerifyBtnHTML(){
+  return `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+    <button onclick="startIDVerification()" id="startIDBtn" style="padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:100px;font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Start ID Verification</button>
+    <span style="font-size:.72rem;color:var(--ink4);">Powered by Certn</span>
+  </div>`;
+}
+
 // ── STEP 3: ID Verification via Certn ──
 window.startIDVerification = async function(){
-  const btn = ge('startIDBtn');
   const step = ge('vstep-id');
   if(step){ step.className='verify-step active'; const n=step.querySelector('.vs-num'); if(n){n.className='vs-num active';n.textContent='→';} }
 
-  // Replace button area with a real ID submission form
-  const idArea = btn.closest('div');
+  const idArea = ge('id-form-container');
   if(!idArea) return;
+
+  // Replace button area with a real ID submission form
 
   idArea.innerHTML = `
     <div style="margin-top:12px;background:var(--surf);border:1.5px solid var(--blue-l);border-radius:var(--rmd);padding:16px 18px;">
@@ -4736,12 +4763,8 @@ window.startIDVerification = async function(){
 window.cancelIDVerification = function(){
   const step = ge('vstep-id');
   if(step){ step.className='verify-step'; const n=step.querySelector('.vs-num'); if(n){n.className='vs-num';n.textContent='3';} }
-  // Restore original button
-  const idStep = step?.querySelector('.vs-info');
-  if(idStep){
-    const oldForm = idStep.querySelector('[style*="background:var(--surf)"]');
-    if(oldForm) oldForm.innerHTML = `<button onclick="startIDVerification()" id="startIDBtn" style="padding:10px 18px;background:var(--navy);color:#fff;border:none;border-radius:100px;font-size:.82rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Start ID Verification</button>`;
-  }
+  const idArea = ge('id-form-container');
+  if(idArea) idArea.innerHTML = _idVerifyBtnHTML();
 };
 
 window.submitIDVerification = async function(){
@@ -5681,29 +5704,31 @@ window.openThreadView = function(appId, name, el){
   if(!view) return;
 
   view.innerHTML = `
-    <div style="padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;background:var(--white);">
-      <div style="width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">${name.charAt(0).toUpperCase()}</div>
-      <div style="font-weight:700;font-size:.95rem;color:var(--ink);">${esc(name)}</div>
+    <div style="padding:10px 16px;background:#075e54;display:flex;align-items:center;gap:12px;flex-shrink:0;">
+      <div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;flex-shrink:0;">${name.charAt(0).toUpperCase()}</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-weight:700;font-size:.95rem;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(name)}</div>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.7);margin-top:1px;">online</div>
+      </div>
     </div>
-    <div id="threadMsgs" style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--surf);">
+    <div id="threadMsgs" style="flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:3px;background:#efeae2;">
       ${thread.slice().reverse().map(m=>{
         const isMe = m.sender_id === currentUser?.id;
-        return`<div style="display:flex;flex-direction:column;align-items:${isMe?'flex-end':'flex-start'};">
-          <div style="max-width:72%;padding:10px 14px;border-radius:14px;font-size:.87rem;line-height:1.5;
-            ${isMe?'background:var(--blue);color:#fff;border-bottom-right-radius:4px;':'background:var(--white);color:var(--ink);border:1px solid var(--line);border-bottom-left-radius:4px;'}">
-            ${esc(m.text)}
-          </div>
-          <div style="font-size:.65rem;color:var(--ink4);margin-top:3px;">${timeAgo(m.created_at)}</div>
+        const time = m.created_at ? new Date(m.created_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}) : '';
+        return`<div class="msg-row ${isMe?'out':'in'}">
+          <div class="msg-bubble ${isMe?'msg-out':'msg-in'}">${esc(m.text)}<span class="msg-ts">${time}</span></div>
         </div>`;
       }).join('')}
     </div>
-    <div style="padding:12px 14px;border-top:1px solid var(--line);display:flex;gap:8px;background:var(--white);">
-      <input id="threadInput" placeholder="Type a message…" 
-        style="flex:1;padding:10px 14px;border:1.5px solid var(--line);border-radius:100px;font-size:.88rem;font-family:var(--f);outline:none;"
-        onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--line)'"
+    <div style="padding:8px 10px;background:#f0f2f5;display:flex;gap:8px;align-items:center;border-top:1px solid rgba(0,0,0,.06);flex-shrink:0;">
+      <input id="threadInput" placeholder="Type a message"
+        style="flex:1;padding:10px 14px;border:none;border-radius:22px;font-size:.88rem;font-family:var(--f);outline:none;background:#fff;"
         onkeydown="if(event.key==='Enter')sendThreadMessage('${appId}')">
-      <button onclick="sendThreadMessage('${appId}')" 
-        style="padding:10px 18px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-size:.85rem;font-weight:700;cursor:pointer;">Send</button>
+      <button onclick="sendThreadMessage('${appId}')"
+        style="width:40px;height:40px;min-width:40px;background:#075e54;color:#fff;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s;"
+        onmouseover="this.style.background='#128c7e'" onmouseout="this.style.background='#075e54'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
     </div>`;
 
   // Scroll to bottom
@@ -5720,8 +5745,9 @@ window.sendThreadMessage = async function(appId){
   const msgs = ge('threadMsgs');
   if(msgs){
     const div = document.createElement('div');
-    div.style.cssText='display:flex;flex-direction:column;align-items:flex-end;';
-    div.innerHTML=`<div style="max-width:72%;padding:10px 14px;border-radius:14px;font-size:.87rem;line-height:1.5;background:var(--blue);color:#fff;border-bottom-right-radius:4px;">${esc(text)}</div><div style="font-size:.65rem;color:var(--ink4);margin-top:3px;">Just now</div>`;
+    div.className = 'msg-row out';
+    const time = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    div.innerHTML = `<div class="msg-bubble msg-out">${esc(text)}<span class="msg-ts">${time}</span></div>`;
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;
   }
